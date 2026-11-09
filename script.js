@@ -9,3 +9,9 @@ $("#enter").onclick=()=>{$("#g1").hidden=true;$("#g2").hidden=false;$("#allow").
 $("#skip").onclick=()=>gate.classList.add("out");
 $("#allow").onclick=async()=>{if(await startCam())gate.classList.add("out");else $("#gerr").textContent="Camera access was blocked. Allow it in your browser’s address bar, or choose Not now to upload photos instead."};
 
+Object.entries(THEMES).forEach(([k,[bg]])=>{const b=document.createElement("button");b.style.background=bg;b.title=k;b.setAttribute("aria-label",k+" strip");b.setAttribute("aria-pressed",k===theme);b.onclick=()=>{theme=k;document.querySelectorAll("#sw button").forEach(x=>x.setAttribute("aria-pressed",x===b));draw()};$("#sw").append(b)});
+Object.keys(FILTERS).forEach(k=>$("#filter").append(new Option(k,k)));
+STICKERS.forEach(s=>{const b=document.createElement("button");b.textContent=s;b.setAttribute("aria-label","Sticker "+s);b.setAttribute("aria-pressed",stk.has(s));b.onclick=()=>{stk.has(s)?stk.delete(s):stk.add(s);b.setAttribute("aria-pressed",stk.has(s));draw()};$("#stk").append(b)});
+document.querySelectorAll("[name=n]").forEach(r=>r.onchange=()=>{n=+r.value;shots=[];thumbs();draw()});
+$("#filter").onchange=e=>{filter=e.target.value;v.style.filter=FILTERS[filter];draw()};
+["#cap","#date","#mir"].forEach(s=>$(s).addEventListener("input",()=>{v.classList.toggle("nomirror",!$("#mir").checked);draw()}));
