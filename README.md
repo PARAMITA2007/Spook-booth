@@ -20,6 +20,7 @@ Future ideas
 Author
 
 Features
+
 1.Webcam capture with a friendly permission screen on entry
 2.Countdown and flash: a 3-2-1 countdown, then each photo is taken automatically
 3.3-photo or 6-photo strips: a single column of three, or two columns of three
@@ -29,6 +30,7 @@ Features
 7.Download as PNG with one click
 
 How it works
+
 The page asks for camera access using the browser's getUserMedia API.
 When you start a session, a countdown runs before each photo.
 Each frame from the video is copied onto a hidden canvas and stored as a raw photo.
@@ -37,6 +39,7 @@ Because the raw photos are kept, every customization simply redraws the strip.
 Save strip exports the canvas as a PNG file.
 
 How to use it
+
 Click Enter the booth, then Allow camera. Or choose Not now to upload photos instead.
 Pick 3 photos or 6 photos.
 Click Start photo session and pose for each countdown.
@@ -53,6 +56,7 @@ spook-booth/
 └── README.md    this file
 
 Tech stack
+
 HTML5 (including inline SVG)
 CSS3 (variables, grid, keyframe animations)
 Vanilla JavaScript (no frameworks, no build step)
@@ -62,7 +66,8 @@ Browser support
 Works in current versions of Chrome, Edge and Firefox. Photo filters on the saved strip rely on the canvas filter property, which older versions of Safari may not support. In that case the strip is still created, but without the filter.
 
 Privacy
-Everything runs in your browser. Photos are never sent to a server or stored anywhere. Closing the page clears them.
+Everything 
+runs in your browser. Photos are never sent to a server or stored anywhere. Closing the page clears them.
 
 Future ideas
 Custom frames and more sticker packs
