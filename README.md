@@ -70,6 +70,8 @@ Everything
 runs in your browser. Photos are never sent to a server or stored anywhere. Closing the page clears them.
 
 Future ideas
+
+
 Custom frames and more sticker packs
 Drag-to-position stickers
 Share a strip directly from the page
