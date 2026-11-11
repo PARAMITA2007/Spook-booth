@@ -2,7 +2,7 @@
 
 A Halloween photobooth that runs entirely in your browser. Allow your webcam, strike a pose, and the booth takes 3 or 6 photos with a countdown and flash. It then builds a classic photo strip that you can customize and download.
 
-LIVE DEMO:https://amazing-liger-a56521.netlify.app
+LIVE DEMO: https://paramita2007.github.io/Spook-booth/
 
 Table of contents
 Features
