@@ -13,3 +13,29 @@ h1{font:400 clamp(2.4rem,7.5vw,4.2rem)/1.1 Creepster,cursive;color:var(--gold);m
 .scene{display:block;width:min(620px,92vw);margin:0 auto}
 .fly{position:absolute;top:20%;left:0;width:70px;pointer-events:none;filter:drop-shadow(0 0 14px #bfd9ff);animation:fly 16s linear infinite}
 @keyframes fly{0%{transform:translate(-100px,0)}25%{transform:translate(25vw,-26px)}50%{transform:translate(50vw,12px)}75%{transform:translate(75vw,-24px)}100%{transform:translate(110vw,0)}}
+.c{position:absolute;bottom:90px;width:46px}.c.l{left:6%}.c.r{right:6%}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick 1.3s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1,1) skewX(0)}25%{transform:scale(.93,1.07) skewX(3deg)}50%{transform:scale(1.05,.94) skewX(-3deg)}75%{transform:scale(.97,1.04) skewX(2deg)}}
+.glow{animation:pulse 2.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.55}}
+.bat{animation:bat 3.4s ease-in-out infinite}@keyframes bat{50%{transform:translate(10px,-8px)}}
+.win{animation:pulse 3s ease-in-out infinite}
+.chev{position:absolute;left:50%;bottom:22px;width:44px;margin-left:-22px;animation:bounce 1.8s ease-in-out infinite}
+@keyframes bounce{50%{transform:translateY(8px)}}
+main{max-width:1040px;margin:0 auto;padding:10px 16px 0;display:grid;grid-template-columns:1.15fr 1fr;gap:22px;scroll-margin-top:10px}
+@media(max-width:820px){main{grid-template-columns:1fr}}
+.scroll,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 0 50px rgba(255,122,43,.08)}
+.screen{position:relative;aspect-ratio:4/3;background:#03030c;border-radius:12px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 0 26px rgba(255,122,43,.3)}
+video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}video.nomirror{transform:none}
+#msg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted)}
+#count{position:absolute;inset:0;display:grid;place-items:center;font:400 9rem Creepster,cursive;color:var(--gold);text-shadow:0 0 30px #000;pointer-events:none}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#flash.go{animation:fl .5s ease-out}@keyframes fl{from{opacity:.95}to{opacity:0}}
+.ctrl{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+button,.upl{font:500 .88rem Rubik,sans-serif;cursor:pointer;border-radius:10px;border:1px solid var(--line);background:#16163a;color:var(--text);padding:11px 16px}
+button.primary{background:var(--gold);border-color:var(--gold);color:#1a0a00;font-weight:600}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,.upl:focus-within,a:focus-visible{outline:2px solid var(--hi);outline-offset:2px}
+.upl{position:relative}.upl input{position:absolute;opacity:0;width:1px;height:1px}
+#thumbs{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+#thumbs canvas{width:64px;height:48px;border-radius:6px;border:2px solid var(--line);background:#03030c;display:block}
+.th{padding:0;border:0;background:none}.th:hover canvas{border-color:var(--hi)}
